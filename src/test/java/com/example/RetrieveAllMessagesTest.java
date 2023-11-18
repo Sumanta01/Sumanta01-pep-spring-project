@@ -47,7 +47,7 @@ public class RetrieveAllMessagesTest {
     @Test
     public void getAllMessagesMessagesAvailable() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/messages"))
+                .uri(URI.create("http://localhost:7778/messages"))
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();

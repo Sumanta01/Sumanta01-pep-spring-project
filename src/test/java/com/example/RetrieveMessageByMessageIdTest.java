@@ -51,7 +51,7 @@ public class RetrieveMessageByMessageIdTest {
     @Test
     public void getMessageGivenMessageIdMessageFound() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/messages/9999"))
+                .uri(URI.create("http://localhost:7778/messages/9999"))
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();
@@ -72,7 +72,7 @@ public class RetrieveMessageByMessageIdTest {
     @Test
     public void getMessageGivenMessageIdMessageNotFound() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/messages/100"))
+                .uri(URI.create("http://localhost:7778/messages/100"))
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();

@@ -54,7 +54,7 @@ public class RetrieveAllMessagesForUserTest {
     @Test
     public void getAllMessagesFromUserMessageExists() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/accounts/9999/messages"))
+                .uri(URI.create("http://localhost:7778/accounts/9999/messages"))
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();
@@ -75,7 +75,7 @@ public class RetrieveAllMessagesForUserTest {
     @Test
     public void getAllMessagesFromUserNoMessagesFound() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/accounts/9998/messages"))
+                .uri(URI.create("http://localhost:7778/accounts/9998/messages"))
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();

@@ -52,7 +52,7 @@ public class UserRegistrationTest {
     public void registerUserSuccessful() throws IOException, InterruptedException {
         String json = "{\"username\":\"user\",\"password\":\"password\"}";
     	HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/register"))
+                .uri(URI.create("http://localhost:7778/register"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();
@@ -72,7 +72,7 @@ public class UserRegistrationTest {
     public void registerUserDuplicateUsername() throws IOException, InterruptedException {
     	String json = "{\"username\":\"user\",\"password\":\"password\"}";
     	HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/register"))
+                .uri(URI.create("http://localhost:7778/register"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();

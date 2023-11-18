@@ -53,7 +53,7 @@ public class UserLoginTest {
     public void loginSuccessful() throws IOException, InterruptedException {
     	String json = "{\"account_id\":0,\"username\":\"testuser1\",\"password\":\"password\"}";
         HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/login"))
+                .uri(URI.create("http://localhost:7778/login"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();
@@ -76,7 +76,7 @@ public class UserLoginTest {
     public void loginInvalidUsername() throws IOException, InterruptedException {
     	String json = "{\"account_id\":9999,\"username\":\"testuser404\",\"password\":\"password\"}";
         HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/login"))
+                .uri(URI.create("http://localhost:7778/login"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();
@@ -96,7 +96,7 @@ public class UserLoginTest {
     public void loginInvalidPassword() throws IOException, InterruptedException {
     	String json = "{\"account_id\":9999,\"username\":\"testuser1\",\"password\":\"pass404\"}";
         HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/login"))
+                .uri(URI.create("http://localhost:7778/login"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();

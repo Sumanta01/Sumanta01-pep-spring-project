@@ -166,7 +166,7 @@ public class SpringTest {
         HttpClient webClient = HttpClient.newHttpClient();
         int random = (int) (Math.random()*100000);
         HttpRequest postRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/arbitrary"+random))
+                .uri(URI.create("http://localhost:7778/arbitrary"+random))
                 .build();
         HttpResponse<String> response = webClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();

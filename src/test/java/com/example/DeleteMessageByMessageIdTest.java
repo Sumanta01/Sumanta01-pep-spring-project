@@ -50,7 +50,7 @@ public class DeleteMessageByMessageIdTest {
     @Test
     public void deleteMessageGivenMessageIdMessageFound() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/messages/9999"))
+                .uri(URI.create("http://localhost:7778/messages/9999"))
                 .DELETE()
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -70,7 +70,7 @@ public class DeleteMessageByMessageIdTest {
     @Test
     public void deleteMessageGivenMessageIdMessageNotFound() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/messages/100"))
+                .uri(URI.create("http://localhost:7778/messages/100"))
                 .DELETE()
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
